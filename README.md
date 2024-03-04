@@ -32,11 +32,11 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About `<a name = "about"></a>`
+## 🧐 About 
 
 Write about 1-2 paragraphs describing the purpose of your project.
 
-## 🏁 Getting Started `<a name = "getting_started"></a>`
+## 🏁 Getting Started 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
@@ -66,7 +66,7 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo.
 
-## 🔧 Running the tests `<a name = "tests"></a>`
+## 🔧 Running the tests 
 
 Explain how to run the automated tests for this system.
 
@@ -86,25 +86,25 @@ Explain what these tests test and why
 Give an example
 ```
 
-## 🎈 Usage `<a name="usage"></a>`
+## 🎈 Usage 
 
 Add notes about how to use the system.
 
-## 🚀 Deployment `<a name = "deployment"></a>`
+## 🚀 Deployment 
 
 Add additional notes about how to deploy this on a live system.
 
-## ⛏️ Built Using `<a name = "built_using"></a>`
+## ⛏️ Built Using 
 
 - [Python](https://www.python.org) - Script
 
-## ✍️ Authors `<a name = "authors"></a>`
+## ✍️ Authors 
 
 - [@kiiwee](https://github.com/kiiwee) - Idea & Initial work
 - [@martinmv](https://github.com/martintmv-git) - Idea & Initial work
 - [@ KiseloMliako](https://github.com/KiseloMliako) - Idea & Initial work
 
-## 🎉 Acknowledgements `<a name = "acknowledgement"></a>`
+## 🎉 Acknowledgements 
 
 - Hat tip to anyone whose code was used
 - Inspiration

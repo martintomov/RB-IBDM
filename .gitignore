@@ -5,6 +5,7 @@
 *.jpg
 *.jpeg
 *Sample foto's/
+data/
 
 # Ignore build output directories
 build/

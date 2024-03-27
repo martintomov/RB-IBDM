@@ -15,9 +15,10 @@
 </div>
 
 ---
+<h3 align="left">Project under development...</h3>
+  
+![RB-IBDM](https://github.com/martintmv-git/RB-IBDM/assets/101264514/4beac6e8-cc73-4e06-9b91-fc40fca38bd3)
 
-<p align="center"> Few lines describing your project.
-    <br> 
 </p>
 
 ## 📝 Table of Contents

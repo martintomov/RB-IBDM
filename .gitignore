@@ -38,3 +38,4 @@ vendor/
 # Ignore system files
 .DS_Store
 Thumbs.db
+Experiments/OpenCV Background Threshold/data

@@ -39,3 +39,4 @@ vendor/
 .DS_Store
 Thumbs.db
 Experiments/OpenCV Background Threshold/data
+local

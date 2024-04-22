@@ -13,13 +13,9 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
+<h3 align="center">Roadmap - 22/04/24</h3>
 
----
-<h3 align="left">Project under development...</h3>
-  
-![RB-IBDM](https://i.imgur.com/Qk9YnEb.jpeg)
-
-</p>
+![RB-IBDM](https://i.imgur.com/v8Yipak.jpeg)
 
 ## 📝 Table of Contents
 

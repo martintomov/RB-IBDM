@@ -3,6 +3,10 @@
 # Ignore image data in the root directory
 data/
 
+# Ignore environment files
+.env
+.env.example
+
 # Ignore build output directories
 build/
 dist/

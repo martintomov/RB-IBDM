@@ -17,13 +17,19 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Change working directory
+        run: cd docs
+
       - name: Install dependencies
         run: npm install
+        working-directory: ./docs
 
       - name: Build Docusaurus site
         run: npm run build
+        working-directory: ./docs
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
+        working-directory: ./docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,6 +7,8 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+import demoImage from '../../static/img/demo.png';
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -16,13 +18,10 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <img src={demoImage} alt="Demo" style={{ width: '900px' }} />
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
         </div>
+        <br></br>
       </div>
     </header>
   );
@@ -32,8 +31,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={'InsectSAM'}
+      description="Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -4,32 +4,30 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'What is InsectSAM?',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+      <b>InsectSAM</b> is an advanced machine learning model tailored for the <b>DIOPSIS camera systems
+      and ARISE algorithms</b>, dedicated to Insect Biodiversity Detection and Monitoring in the Netherlands. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'How does it work?',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      Based on <b>Meta AI segment-anything</b>, InsectSAM is fine-tuned to accurately segment insects from complex backgrounds. It boosts the precision and efficiency of biodiversity monitoring algorithms, especially in scenarios with diverse backgrounds that attract insects.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Technologies Used',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+      <b>Python 3.11, PyTorch, Hugging Face Transformers, OpenCV,</b> and more. InsectSAM is designed to be easily integrated into existing DIOPSIS and ARISE algorithms, providing a seamless experience for researchers and developers.
       </>
     ),
   },

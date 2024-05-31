@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '16'
 
       - name: Change working directory
         run: cd docs
@@ -29,7 +29,8 @@ jobs:
         working-directory: ./docs
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
-        working-directory: ./docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_USER: martintmv-git
+        run: npm run deploy
+        working-directory: ./docs

@@ -1,9 +1,10 @@
-# InsectSAM
+# InsectSAM 🐞
 
 ![InsectSAM Hugging Face App](https://i.imgur.com/cCgpvx9.png)
 
 ## Results in Development
-![Results in Development](https://imgur.com/enGv0lv.png)
+
+![Results in Development](https://i.ibb.co/591nr5Y/Screenshot-2024-05-31-at-17-04-34.png)
 
 ## Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms
 
@@ -11,7 +12,7 @@ This application facilitates the preprocessing of images for subsequent analysis
 
 ## Description
 
-The primary goal of this application is to prepare images with insects for further analysis using the DIOPSIS and ARISE algorithms. These algorithms are essential for detecting and analyzing insect biodiversity, but they require images that are appropriately preprocessed to ensure accurate results. 
+The primary goal of this application is to prepare images with insects for further analysis using the DIOPSIS and ARISE algorithms. These algorithms are essential for detecting and analyzing insect biodiversity, but they require images that are appropriately preprocessed to ensure accurate results.
 
 To achieve this, the application employs deep learning models for insect detection and segmentation. The InsectSAM model is utilized to segment insects within images, while the GroundingDINO model enables zero-shot object detection of insects. By combining these models, the application can accurately identify insects within images, even in diverse and complex backgrounds to which insects are naturally attracted.
 
@@ -22,7 +23,7 @@ Furthermore, the application generates annotations such as bounding boxes and ma
 To use this application, follow these steps:
 
 1. Clone this repository to your local machine.
-2. Create a conda environment for the project. 
+2. Create a conda environment for the project.
 3. Install the required dependencies by running `pip install -r requirements.txt`.
 
 ## Usage
@@ -50,4 +51,5 @@ This will launch a Gradio interface where you can upload images and visualize th
 For more details on the models and algorithms used in this application, please refer to the respective repositories.
 
 ---
+
 **Disclaimer**: This application is for demonstration purposes only and should not be used for critical insect detection tasks without proper evaluation and validation.

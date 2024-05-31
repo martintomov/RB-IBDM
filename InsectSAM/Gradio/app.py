@@ -191,19 +191,27 @@ def detections_to_json(detections):
         detections_list.append(detection_dict)
     return detections_list
 
-def process_image(image):
+def process_image(image, include_json):
     labels = ["insect"]
     original_image, detections = grounded_segmentation(image, labels, threshold=0.3, polygon_refinement=True)
     yellow_background_with_insects = create_yellow_background_with_insects(np.array(original_image), detections)
-    detections_json = detections_to_json(detections)
-    json_output_path = "insect_detections.json"
-    with open(json_output_path, 'w') as json_file:
-        json.dump(detections_json, json_file, indent=4)
-    return yellow_background_with_insects, json.dumps(detections_json, separators=(',', ':'))
+    if include_json:
+        detections_json = detections_to_json(detections)
+        json_output_path = "insect_detections.json"
+        with open(json_output_path, 'w') as json_file:
+            json.dump(detections_json, json_file, indent=4)
+        return yellow_background_with_insects, json.dumps(detections_json, separators=(',', ':'))
+    else:
+        return yellow_background_with_insects, None
+
+examples = [
+    ["flower-night.jpg"]
+]
 
 gr.Interface(
     fn=process_image,
-    inputs=gr.Image(type="pil"),
+    inputs=[gr.Image(type="pil"), gr.Checkbox(label="Include JSON", value=False)],
     outputs=[gr.Image(type="numpy"), gr.Textbox()],
-    title="🐞 InsectSAM + GroundingDINO Inference",
+    title="InsectSAM 🐞",
+    examples=examples
 ).launch()

@@ -151,10 +151,12 @@ def extract_and_paste_insect(original_image: np.ndarray, detection: DetectionRes
     background[y_offset:y_end, x_offset:x_end] = insect
 
 def create_yellow_background_with_insects(image: np.ndarray, detections: List[DetectionResult]) -> np.ndarray:
-    yellow_background = np.full((image.shape[0], image.shape[1], 3), (0, 255, 255), dtype=np.uint8)
+    yellow_background = np.full((image.shape[0], image.shape[1], 3), (0, 255, 255), dtype=np.uint8)  # BGR for yellow
     for detection in detections:
         if detection.mask is not None:
             extract_and_paste_insect(image, detection, yellow_background)
+    # Convert back to RGB to match Gradio's expected input format
+    yellow_background = cv2.cvtColor(yellow_background, cv2.COLOR_BGR2RGB)
     return yellow_background
 
 def run_length_encoding(mask):

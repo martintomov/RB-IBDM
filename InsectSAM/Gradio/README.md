@@ -4,7 +4,7 @@
 
 ## Results in Development
 
-![Results in Development](https://i.ibb.co/591nr5Y/Screenshot-2024-05-31-at-17-04-34.png)
+![Results in Development](https://i.ibb.co/bBwQBNw/Screenshot-2024-06-04-at-21-04-20.png)
 
 ## Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms
 

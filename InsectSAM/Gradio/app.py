@@ -182,36 +182,88 @@ def detections_to_json(detections):
             "box": {
                 "xmin": detection.box.xmin,
                 "ymin": detection.box.ymin,
-                "xmax": detection.box.xmax,
-                "ymax": detection.box.ymax
+                "xmax": detection.box.xmax
             },
             "mask": run_length_encoding(detection.mask) if detection.mask is not None else None
         }
         detections_list.append(detection_dict)
     return detections_list
 
+def crop_bounding_boxes_with_yellow_background(image: np.ndarray, yellow_background: np.ndarray, detections: List[DetectionResult]) -> List[np.ndarray]:
+    crops = []
+    for detection in detections:
+        xmin, ymin, xmax, ymax = detection.box.xyxy
+        crop = yellow_background[ymin:ymax, xmin:xmax]
+        crops.append(crop)
+    return crops
+
 def process_image(image, include_json, include_bboxes):
     labels = ["insect"]
     original_image, detections = grounded_segmentation(image, labels, threshold=0.3, polygon_refinement=True)
     yellow_background_with_insects = create_yellow_background_with_insects(np.array(original_image), detections)
     annotated_image = plot_detections(yellow_background_with_insects, detections, include_bboxes)
+
+    results = [annotated_image]
+    if include_bboxes:
+        crops = crop_bounding_boxes_with_yellow_background(np.array(original_image), yellow_background_with_insects, detections)
+        results.extend(crops)
+
     if include_json:
         detections_json = detections_to_json(detections)
         json_output_path = "insect_detections.json"
         with open(json_output_path, 'w') as json_file:
             json.dump(detections_json, json_file, indent=4)
-        return annotated_image, json.dumps(detections_json, separators=(',', ':'))
-    else:
-        return annotated_image, None
+        results.append(json.dumps(detections_json, separators=(',', ':')))
+    elif not include_bboxes:
+        results.append(None)
+    
+    return tuple(results)
 
 examples = [
     ["flower-night.jpg"]
 ]
 
-gr.Interface(
-    fn=process_image,
-    inputs=[gr.Image(type="pil"), gr.Checkbox(label="Include JSON", value=False), gr.Checkbox(label="Include Bounding Boxes", value=False)],
-    outputs=[gr.Image(type="numpy"), gr.Textbox()],
-    title="InsectSAM 🐞",
-    examples=examples
-).launch()
+css = """
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.checkbox-group .gr-checkbox {
+    width: auto;
+}
+"""
+
+with gr.Blocks(css=css) as demo:
+    gr.Markdown("InsectSAM 🐞 Detect and Segment Insects in Datasets")
+    with gr.Row():
+        image_input = gr.Image(type="pil")
+        with gr.Column():
+            include_json = gr.Checkbox(label="Include JSON", value=False, elem_id="checkbox-group")
+            include_bboxes = gr.Checkbox(label="Include Bounding Boxes", value=False, elem_id="checkbox-group")
+            gr.Examples(examples=examples, inputs=[image_input, include_json, include_bboxes])
+        submit_button = gr.Button("Submit")
+
+    annotated_output = gr.Image(type="numpy")
+    json_output = gr.Textbox(label="JSON")
+    crops_output = gr.Gallery(label="Cropped Bounding Boxes")
+
+    async def update_outputs(image, include_json, include_bboxes):
+        results = process_image(image, include_json, include_bboxes)
+        if include_bboxes and include_json:
+            annotated_img, *crops, json_txt = results
+            return (annotated_img, json_txt, crops)
+        elif include_bboxes:
+            annotated_img, *crops = results
+            return (annotated_img, None, crops)
+        elif include_json:
+            annotated_img, json_txt = results
+            return (annotated_img, json_txt, [])
+        else:
+            annotated_img = results[0]
+            return (annotated_img, None, [])
+
+    submit_button.click(update_outputs, [image_input, include_json, include_bboxes], [annotated_output, json_output, crops_output])
+
+demo.launch()

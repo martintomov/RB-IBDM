@@ -46,7 +46,7 @@ class DetectionResult:
             )
         )
 
-def annotate(image: Union[Image.Image, np.ndarray], detection_results: List[DetectionResult]) -> np.ndarray:
+def annotate(image: Union[Image.Image, np.ndarray], detection_results: List[DetectionResult], include_bboxes: bool = True) -> np.ndarray:
     image_cv2 = np.array(image) if isinstance(image, Image.Image) else image
     image_cv2 = cv2.cvtColor(image_cv2, cv2.COLOR_RGB2BGR)
 
@@ -55,21 +55,17 @@ def annotate(image: Union[Image.Image, np.ndarray], detection_results: List[Dete
         score = detection.score
         box = detection.box
         mask = detection.mask
-        color = np.random.randint(0, 256, size=3).tolist()
 
-        cv2.rectangle(image_cv2, (box.xmin, box.ymin), (box.xmax, box.ymax), color, 2)
-        cv2.putText(image_cv2, f'{label}: {score:.2f}', (box.xmin, box.ymin - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-
-        if mask is not None:
-            mask_uint8 = (mask * 255).astype(np.uint8)
-            contours, _ = cv2.findContours(mask_uint8, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            cv2.drawContours(image_cv2, contours, -1, color, 2)
+        if include_bboxes:
+            color = np.random.randint(0, 256, size=3).tolist()
+            cv2.rectangle(image_cv2, (box.xmin, box.ymin), (box.xmax, box.ymax), color, 2)
+            cv2.putText(image_cv2, f'{label}: {score:.2f}', (box.xmin, box.ymin - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
     return cv2.cvtColor(image_cv2, cv2.COLOR_BGR2RGB)
 
-def plot_detections(image: Union[Image.Image, np.ndarray], detections: List[DetectionResult]) -> np.ndarray:
-    annotated_image = annotate(image, detections)
+def plot_detections(image: Union[Image.Image, np.ndarray], detections: List[DetectionResult], include_bboxes: bool = True) -> np.ndarray:
+    annotated_image = annotate(image, detections, include_bboxes)
     return annotated_image
 
 def load_image(image: Union[str, Image.Image]) -> Image.Image:
@@ -148,7 +144,8 @@ def extract_and_paste_insect(original_image: np.ndarray, detection: DetectionRes
     x_offset, y_offset = xmin, ymin
     x_end, y_end = x_offset + insect.shape[1], y_offset + insect.shape[0]
 
-    background[y_offset:y_end, x_offset:x_end] = insect
+    insect_area = background[y_offset:y_end, x_offset:x_end]
+    insect_area[mask_crop == 1] = insect[mask_crop == 1]
 
 def create_yellow_background_with_insects(image: np.ndarray, detections: List[DetectionResult]) -> np.ndarray:
     yellow_background = np.full((image.shape[0], image.shape[1], 3), (0, 255, 255), dtype=np.uint8)  # BGR for yellow
@@ -193,18 +190,19 @@ def detections_to_json(detections):
         detections_list.append(detection_dict)
     return detections_list
 
-def process_image(image, include_json):
+def process_image(image, include_json, include_bboxes):
     labels = ["insect"]
     original_image, detections = grounded_segmentation(image, labels, threshold=0.3, polygon_refinement=True)
     yellow_background_with_insects = create_yellow_background_with_insects(np.array(original_image), detections)
+    annotated_image = plot_detections(yellow_background_with_insects, detections, include_bboxes)
     if include_json:
         detections_json = detections_to_json(detections)
         json_output_path = "insect_detections.json"
         with open(json_output_path, 'w') as json_file:
             json.dump(detections_json, json_file, indent=4)
-        return yellow_background_with_insects, json.dumps(detections_json, separators=(',', ':'))
+        return annotated_image, json.dumps(detections_json, separators=(',', ':'))
     else:
-        return yellow_background_with_insects, None
+        return annotated_image, None
 
 examples = [
     ["flower-night.jpg"]
@@ -212,7 +210,7 @@ examples = [
 
 gr.Interface(
     fn=process_image,
-    inputs=[gr.Image(type="pil"), gr.Checkbox(label="Include JSON", value=False)],
+    inputs=[gr.Image(type="pil"), gr.Checkbox(label="Include JSON", value=False), gr.Checkbox(label="Include Bounding Boxes", value=False)],
     outputs=[gr.Image(type="numpy"), gr.Textbox()],
     title="InsectSAM 🐞",
     examples=examples

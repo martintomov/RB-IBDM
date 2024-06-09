@@ -17,8 +17,6 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](/LICENSE)
 
-![Video Demo](/InsectSAM/Gradio/video-demos/demo-hf-gradio.mp4)
-
 </div>
 
 ![RB-IBDM](https://i.imgur.com/ygXKFVi.jpeg)

@@ -10,12 +10,14 @@
   <a href="https://insectsam.live">Docs - insectsam.live</a>
 </div>
 
+<br>
+
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](/LICENSE)
 
-![Results in Development](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Gradio/demo-gif.gif?raw=true)
+![Video Demo](/InsectSAM/Gradio/video-demos/demo-hf-gradio.mp4)
 
 </div>
 

@@ -17,31 +17,13 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](/LICENSE)
 
-
 https://huggingface.co/spaces/martintmv/InsectSAM
 
 https://github.com/martintmv-git/RB-IBDM/assets/101264514/fcde1500-9fbb-40c1-8981-15890747319a
 
-
 </div>
 
-![poster](https://github.com/martintmv-git/RB-IBDM/assets/101264514/7d636815-c081-4aac-ae99-0b6088c2ddee)
-
-## 📝 Table of Contents
-
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
-## 🧐 About
-
-Write about 1-2 paragraphs describing the purpose of your project.
+![poster](https://i.imgur.com/6cVkaTP.png)
 
 ## 🏁 Getting Started
 

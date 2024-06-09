@@ -2,7 +2,7 @@
 
 ![InsectSAM Hugging Face App](https://i.imgur.com/cCgpvx9.png)
 
-![Results in Development](demo-gif.gif)
+![Demo](/InsectSAM/Gradio/video-demos/demo-gif.gif)
 
 ## Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms
 

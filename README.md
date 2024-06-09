@@ -3,17 +3,21 @@
  <img width=200px height=200px src="https://i.imgur.com/hjWgAN9.png alt="Project logo"></a>
 </p>
 
+<h3 align="center">InsectSAM 🐞 Detect and Segment Insects in Datasets</h3>
 <h3 align="center">Research-Based Insect Biodiversity Detection and Monitoring</h3>
+
+<div align="center" style="font-size:1.5rem">
+  <a href="https://insectsam.live">Docs - insectsam.live</a>
+</div>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/martintmv-git/RB-IBDM/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/martintmv-git/RB-IBDM/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](/LICENSE)
+
+![Results in Development](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Gradio/demo-gif.gif?raw=true)
 
 </div>
-<h3 align="center">Progress Update - 29/04/24</h3>
 
 ![RB-IBDM](https://i.imgur.com/ygXKFVi.jpeg)
 

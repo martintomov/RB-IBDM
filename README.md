@@ -25,7 +25,7 @@ https://github.com/martintmv-git/RB-IBDM/assets/101264514/fcde1500-9fbb-40c1-898
 
 </div>
 
-![RB-IBDM](https://i.imgur.com/ygXKFVi.jpeg)
+![poster](https://github.com/martintmv-git/RB-IBDM/assets/101264514/7d636815-c081-4aac-ae99-0b6088c2ddee)
 
 ## 📝 Table of Contents
 

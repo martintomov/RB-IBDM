@@ -86,26 +86,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/martintmv-git/RB-IBDM',
-              },
-              {
-                label: 'Hugging Face',
-                href: 'https://huggingface.co/martintmv/InsectSAM',
-              },
-              {
-                label: 'Gradio App',
-                href: 'https://huggingface.co/spaces/martintmv/InsectSAM',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} InsectSAM. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} InsectSAM. <br> Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

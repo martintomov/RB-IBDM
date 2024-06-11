@@ -19,7 +19,8 @@ def process_image(image, include_json):
 
 examples = [
     ["demo.jpg"],
-    ["demo-2.jpg"],
+    ["demo1.jpg"],
+    ["demo2.jpg"],
 ]
 
 gr.Interface(

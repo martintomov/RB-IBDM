@@ -1,0 +1,11 @@
+gradio==4.29.0
+transformers
+opencv-python
+Pillow
+numpy
+requests
+matplotlib
+ultralytics
+onnxruntime
+efficientnet
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git@main

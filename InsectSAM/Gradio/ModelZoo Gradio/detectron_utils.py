@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 from huggingface_hub import hf_hub_download
 
-REPO_ID = "kiiwee/Detectron2_FasterRCNN_InsectDetect"
+REPO_ID = "idml/Detectron2-FasterRCNN_InsectDetect"
 FILENAME = "model.pth"
 FILENAME_CONFIG = "config.yml"
 

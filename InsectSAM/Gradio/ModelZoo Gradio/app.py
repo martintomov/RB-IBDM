@@ -20,15 +20,14 @@ def process_image(image, include_json):
 examples = [
     ["demo.jpg"],
     ["demo1.jpg"],
-    ["demo2.jpg"],
 ]
 
 gr.Interface(
     fn=process_image,
-    inputs=[gr.Image(type="pil"), gr.Checkbox(label="Include JSON", value=False)],
+    inputs=[gr.Image(type="pil")],
     outputs=[gr.Image(label='InsectSAM', type="numpy"),
              gr.Image(label='Yolov8', type="numpy"),
              gr.Image(label='Detectron', type="numpy")],
-    title="Model Zoo🐞",
+    title="Insect Model Zoo 🐞🔬",
     examples=examples
 ).launch()

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# YOLOv8 Sidebar 1
+# Alternative Sidebar 1
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

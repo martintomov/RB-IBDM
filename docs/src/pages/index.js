@@ -7,7 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-import demoImage from '../../static/img/demo.png';
+import demoImage from '../../static/img/demo-rbibdm.png';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -18,7 +18,7 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <img src={demoImage} alt="Demo" style={{ width: '900px' }} />
+        <img src={demoImage} alt="Demo" style={{ width: '1200px' }} />
         <div className={styles.buttons}>
         </div>
         <br></br>
@@ -31,7 +31,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={'InsectSAM'}
+      title={'RB-IBDM'}
       description="Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms">
       <HomepageHeader />
       <main>

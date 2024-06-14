@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Improving InsectSAM
+# YOLOv8 Sidebar 2
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

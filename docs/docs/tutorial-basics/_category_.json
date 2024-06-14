@@ -1,8 +1,8 @@
 {
-  "label": "Basics",
+  "label": "InsectSAM",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Based on Meta AI segment-anything, InsectSAM is fine-tuned to accurately segment insects from complex backgrounds. It boosts the precision and efficiency of biodiversity monitoring algorithms, especially in scenarios with diverse backgrounds that attract insects."
   }
 }

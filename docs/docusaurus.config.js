@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'InsectSAM 🐞',
+  title: 'Research-Based Insect Biodiversity Detection and Monitoring [RB-IBDM] 🐞',
   tagline: 'Insect Detection and Dataset Preparation for DIOPSIS and ARISE Algorithms',
   favicon: 'img/favicon.ico',
 
@@ -59,7 +59,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'InsectSAM 🐞',
+        title: 'RB-IBDM 🐞',
         items: [
           {
             type: 'docSidebar',
@@ -74,19 +74,14 @@ const config = {
           },
           {
             label: 'Hugging Face',
-            href: 'https://huggingface.co/martintmv/InsectSAM',
-            position: 'right',
-          },
-          {
-            label: 'Gradio App',
-            href: 'https://huggingface.co/spaces/martintmv/InsectSAM',
+            href: 'https://huggingface.co/collections/martintmv/rb-ibdm-666824feecea680668cbe982',
             position: 'right',
           },
         ],
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} InsectSAM. <br> Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} RB-IBDM 🐞 <br> Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

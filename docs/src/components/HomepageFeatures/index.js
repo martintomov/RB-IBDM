@@ -4,11 +4,11 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'What is InsectSAM?',
+    title: 'What is RB-IBDM?',
     Img: require('@site/static/img/undraw_docusaurus_mountain.png').default,
     description: (
       <>
-      <b>InsectSAM</b> is an open-source machine learning model tailored for the <b>DIOPSIS camera systems
+      <b>RB-IBDM</b> is an open-source machine learning project tailored for the <b>DIOPSIS camera systems
       and ARISE algorithms</b>, dedicated to Insect Biodiversity Detection and Monitoring in the Netherlands. 
       </>
     ),
@@ -18,7 +18,7 @@ const FeatureList = [
     Img: require('@site/static/img/undraw_docusaurus_react.png').default,
     description: (
       <>
-      Based on <b>Meta AI segment-anything</b>, InsectSAM is fine-tuned to accurately segment insects from complex backgrounds. It boosts the precision and efficiency of biodiversity monitoring algorithms, especially in scenarios with diverse backgrounds that attract insects.
+      <b>RB-IBDM's models</b> are trained to accurately detect and segment insects from complex backgrounds. This collection of trained ML models boosts the precision and efficiency of biodiversity monitoring algorithms, particularly in scenarios with diverse backgrounds that attract insects.
       </>
     ),
   },
@@ -27,7 +27,7 @@ const FeatureList = [
     Img: require('@site/static/img/undraw_docusaurus_stack.png').default,
     description: (
       <>
-      <b>Python, PyTorch, Hugging Face Transformers, OpenCV,</b> and more. InsectSAM is designed to be easily integrated into existing DIOPSIS and ARISE algorithms, providing a seamless experience for researchers and developers.
+      <b>Python, PyTorch, Hugging Face Transformers, OpenCV,</b> and more. RB-IBDM algorithms are designed to be easily integrated into existing DIOPSIS and ARISE algorithms, providing a seamless experience for researchers and developers.
       </>
     ),
   },

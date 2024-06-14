@@ -3,6 +3,24 @@ sidebar_position: 1
 ---
 # Usage
 
+## Installation
+
+To begin using InsectSAM, you'll need to install the necessary dependencies and download the model from Hugging Face. Follow these steps:
+
+1. Install the Hugging Face Transformers library:
+
+   ```bash
+   pip install transformers
+   ```
+2. Download and set up the InsectSAM model:
+
+   ```python
+   from transformers import AutoModelForImageSegmentation, AutoProcessor
+
+   model = AutoModelForImageSegmentation.from_pretrained("martintmv/InsectSAM")
+   processor = AutoProcessor.from_pretrained("martintmv/InsectSAM")
+   ```
+
 > Tip: Use this Jupyter Notebook - [Run InsectSAM using Transformers 🤗](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb)
 
 Once you have the model set up, you can start using it to perform semantic segmentation on insect images. Here's a quick example to get you started:
@@ -97,3 +115,12 @@ Once you have the model set up, you can start using it to perform semantic segme
 Here's an example of how the model segments an image:
 | ![Inference 1](../../static/img/inference1.png) | ![Inference 2](../../static/img/inference2.png) |
 |:--------------------------------------------------:|:--------------------------------------------------:|
+
+## Further Reading
+
+To dive deeper into the capabilities and advanced usage of InsectSAM, refer to the following resources:
+
+- [InsectSAM Model Page on Hugging Face](https://huggingface.co/martintmv/InsectSAM)
+- [InsectSAM Demo App on Hugging Face](https://huggingface.co/spaces/martintmv/InsectSAM)
+- [Transformers Documentation](https://huggingface.co/transformers/)
+- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)

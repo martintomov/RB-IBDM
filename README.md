@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/e6znkoO.jpeg alt="Project logo"></a>
+ <img src="https://i.imgur.com/kLGQnO3.jpeg alt="Project logo"></a>
 </p>
 
 <h3 align="center">Research-Based Insect Biodiversity Detection and Monitoring</h3>

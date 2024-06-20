@@ -18,6 +18,8 @@
 
 https://huggingface.co/collections/martintmv/rb-ibdm-666824feecea680668cbe982
 
+[insectmodelzoo.webm](https://github.com/martintmv-git/RB-IBDM/assets/101264514/a7cd90a1-e6a2-46bb-805e-6dd97400dfab)
+
 https://github.com/martintmv-git/RB-IBDM/assets/101264514/fcde1500-9fbb-40c1-8981-15890747319a
 
 </div>

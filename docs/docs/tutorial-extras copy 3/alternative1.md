@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# GLS 1
+# GSL 1
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

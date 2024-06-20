@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Alternative Sidebar 1
+# Insect Detect ML
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

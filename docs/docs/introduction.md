@@ -13,6 +13,8 @@ Welcome to the **RB-IBDM** documentation!
 
 Let's get you started with **RB-IBDM** and guide you through the initial steps to utilize this model effectively.
 
+Visit the project's GitHub repository → https://github.com/martintmv-git/RB-IBDM
+
 ### What you'll need (essentials)
 
 - A modern development environment set up with the following:

@@ -14,9 +14,7 @@ To begin using InsectSAM, you'll need to install the necessary dependencies and 
    git clone https://huggingface.co/martintmv/InsectSAM 
    ```
 
-2. Create a virtual environment with **venv** or **conda** and install the required dependencies:
-
-**Always** use a Virtual Environment to manage dependencies. A virtual environment helps to keep dependencies required by different projects separate by creating isolated Python virtual environments for them. Links to [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and [venv](https://docs.python.org/3/library/venv.html).
+2. Create a virtual environment with **conda** or **venv** and install the required dependencies. **Always** use a virtual environment to manage dependencies. A virtual environment helps to keep dependencies required by different projects separate by creating isolated Python virtual environments for them. Links to [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and [venv](https://docs.python.org/3/library/venv.html).
 
    ```python
    python -m venv insectsam-env

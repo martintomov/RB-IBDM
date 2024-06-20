@@ -46,6 +46,10 @@ To begin using InsectSAM, you'll need to install the necessary dependencies and 
 
 **Tip**: Use this Jupyter Notebook - [Run InsectSAM using Transformers 🤗](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb)
 
+<a href="https://colab.research.google.com/github/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb" target="_parent">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 Once you have the model set up, you can start using it to perform semantic segmentation on insect images. Here's a quick example to get you started:
 
 1. **Load the model and processor:**
@@ -128,7 +132,12 @@ Once you have the model set up, you can start using it to perform semantic segme
 
 ## Example Inferences
 
-Here's an example of how the model segments an image with the code from above and from [here](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb) (open in Colab).
+Here's an example of how the model segments an image with the code from above and from [here](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb).
+
+<a href="https://colab.research.google.com/github/martintmv-git/RB-IBDM/blob/main/InsectSAM/Run_InsectSAM_Inference_Transformers.ipynb" target="_parent">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 | ![Inference 1](../../static/img/inference1.png) | ![Inference 2](../../static/img/inference2.png) |
 |:--------------------------------------------------:|:--------------------------------------------------:|
 

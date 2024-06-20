@@ -1,9 +1,11 @@
 ---
 sidebar_position: 2
 ---
-# InsectSAM + GroundingDINO
+# InsectSAM & GroundingDINO
 
-Documents are **groups of pages** connected through:
+Combining InsectSAM with GroundingDINO for text-based mask generation.
+
+This page can be found implemented as a Jupyter Notebook [here](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/InsectSAM_GroundingDINO.ipynb) (open in Colab).
 
 - a **sidebar**
 - **previous/next navigation**

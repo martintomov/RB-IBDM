@@ -4,12 +4,18 @@ sidebar_position: 2
 
 # InsectSAM & GroundingDINO
 
+
+Combining InsectSAM with GroundingDINO for text-based mask generation.
+
 <a href="https://colab.research.google.com/github/martintmv-git/RB-IBDM/blob/main/InsectSAM/InsectSAM_GroundingDINO.ipynb" target="_parent">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-Combining InsectSAM with GroundingDINO for text-based mask generation.
-- This page can be found implemented as a Jupyter Notebook [here](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/InsectSAM_GroundingDINO.ipynb).
+This page can be found implemented as a two Jupyter Notebooks:
+
+1. [InsectSAM with GroundingDINO for text-based mask generation](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/InsectSAM_GroundingDINO.ipynb)
+
+2. [InsectSAM with GroundingDINO, Cleaned for Gradio Demo](https://github.com/martintmv-git/RB-IBDM/blob/main/InsectSAM/HF_Demo_InsectSAM_GroundingDINO.ipynb)
 
 ![demo](../../static/img/demo-intro.png)
 
@@ -512,6 +518,6 @@ plt.show()
 ### The output with the bounding boxes included look something like:
 ![demo](../../static/img/output2-insectsamdino.png)
 
-As much as these classification bounding boxes are not useful to get insights for what species the insects are, they are useful for the DIOPSIS and ARISE models to generate and crop each insect from the original unproccessed image to small images for further processing. In [Hugging Face InsectSAM Gradio](https://huggingface.co/spaces/martintmv/InsectSAM), this is visible when `Include Bounding Boxes` is checked.
+As much as these classification bounding boxes are not useful to get insights for what species the insects are, they are useful for the DIOPSIS and ARISE algorithms to generate and crop each insect from the original unproccessed image to small images for further processing, while changing the complex background to yellow. In [Hugging Face InsectSAM Gradio](https://huggingface.co/spaces/martintmv/InsectSAM), this is visible when `Include Bounding Boxes` is checked.
 
 ![demo](../../static/img/output-includebbox.png)

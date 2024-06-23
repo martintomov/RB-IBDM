@@ -4,7 +4,11 @@ sidebar_position: 1
 # Usage
 
 ## Overview
-This notebook uses Detectron2's Faster R-CNN model to detect and classify insects in images. It guides you through setting up the environment, loading the model, processing images, and visualizing the results.
+This notebook uses Detectron2's Faster R-CNN model with a ResNeXt-101-32x8d backbone and Feature Pyramid Network (FPN) to detect and classify insects in images. It guides you through setting up the environment, loading the model, processing images, and visualizing the results.
+
+<a href="https://colab.research.google.com/drive/1QZoKi-58ZdS5S6GkkmfUZKo0L8OoiIkJ" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 ## Prerequisites
 1. **Google Colab**: Ensure you are running this notebook in Google Colab for GPU support.
@@ -24,67 +28,164 @@ drive.mount('/content/drive')
 Install Detectron2 library and its dependencies.
 
 ```python
-!pip install -U torch torchvision
-!pip install cython pyyaml==5.1
-!pip install 'git+https://github.com/facebookresearch/fvcore'
-!pip install detectron2 -f \
-  https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.5/index.html
+!python -m pip install pyyaml==5.1
+import sys, os, distutils.core
+!git clone 'https://github.com/facebookresearch/detectron2'
+dist = distutils.core.run_setup("./detectron2/setup.py")
+!python -m pip install --quiet {' '.join([f"'{x}'" for x in dist.install_requires])}
+sys.path.insert(0, os.path.abspath('./detectron2'))
 ```
 
 ### 3. Add Necessary Imports
 Import the required libraries and modules for the process.
 
 ```python
-import torch, torchvision
-import cv2
-import random
+import torch, detectron2
+# Setup detectron2 logger
+from detectron2.utils.logger import setup_logger
+setup_logger()
+
+# import some common libraries
 import numpy as np
-import os
+import os, json, cv2, random
 from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt
 
-from detectron2 import model_zoo
-from detectron2.engine import DefaultPredictor
+# import some common detectron2 utilities
 from detectron2.config import get_cfg
-from detectron2.utils.visualizer import Visualizer
+from detectron2.engine import DefaultPredictor
 from detectron2.data import MetadataCatalog
+from detectron2.utils.visualizer import Visualizer, ColorMode
 ```
 
-### 4. Load and Preprocess Image
-Load the image you want to process from your Google Drive.
-
-```python
-image_path = '/content/drive/MyDrive/path_to_your_image.jpg'
-image = cv2.imread(image_path)
-cv2_imshow(image)
-```
-
-### 5. Configure the Model
+### 4. Configure the Model
 Set up the configuration for the Detectron2 Faster R-CNN model.
 
 ```python
 cfg = get_cfg()
-cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml"))
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
-cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml")
+cfg.merge_from_file('/content/drive/MyDrive/diopsis_coco_split_flowers/results/config.yml')
+cfg.MODEL.WEIGHTS = '/content/drive/MyDrive/diopsis_coco_split_flowers/results/model_0004999.pth'
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.2
 predictor = DefaultPredictor(cfg)
 ```
 
-### 6. Detect and Classify Insects
+### 5. Load an Image and run the predictor
+Load the image you want to process from your Google Drive and use the model to detect and classify insects in the image.
+
+```python
+image_path = '/content/drive/MyDrive/diopsis_coco_split_flowers/flower-night.jpg'
+im = cv2.imread(image_path)
+outputs = predictor(im)
+```
+
+![detectron2_org](../../static/img/detectron2_org.jpg)
+
+### 6. Instantiate the classes
+Load the categories that have been used during the training to map the predictions to the correct names.
+
+```python
+thing_classes = {'thing_classes':['Acrididae',
+                         'Agapeta',
+                         'Agapeta hamana',
+                         'Animalia',
+                         'Anisopodidae',
+                         'Aphididae',
+                         'Apidae',
+                         'Arachnida',
+                         'Araneae',
+                         'Arctiidae',
+                         'Auchenorrhyncha indet.',
+                         'Baetidae',
+                         'Cabera',
+                         'Caenidae',
+                         'Carabidae',
+                         'Cecidomyiidae',
+                         'Ceratopogonidae',
+                         'Cercopidae',
+                         'Chironomidae',
+                         'Chrysomelidae',
+                         'Chrysopidae',
+                         'Chrysoteuchia culmella',
+                         'Cicadellidae',
+                         'Coccinellidae',
+                         'Coleophoridae',
+                         'Coleoptera',
+                         'Collembola',
+                         'Corixidae',
+                         'Crambidae',
+                         'Culicidae',
+                         'Curculionidae',
+                         'Dermaptera',
+                         'Diptera',
+                         'Eilema',
+                         'Empididae',
+                         'Ephemeroptera',
+                         'Erebidae',
+                         'Fanniidae',
+                         'Formicidae',
+                         'Gastropoda',
+                         'Gelechiidae',
+                         'Geometridae',
+                         'Hemiptera',
+                         'Hydroptilidae',
+                         'Hymenoptera',
+                         'Ichneumonidae',
+                         'Idaea',
+                         'Insecta',
+                         'Lepidoptera',
+                         'Leptoceridae',
+                         'Limoniidae',
+                         'Lomaspilis marginata',
+                         'Miridae',
+                         'Mycetophilidae',
+                         'Nepticulidae',
+                         'Neuroptera',
+                         'Noctuidae',
+                         'Notodontidae',
+                         'Object',
+                         'Opiliones',
+                         'Orthoptera',
+                         'Panorpa germanica',
+                         'Panorpa vulgaris',
+                         'Parasitica indet.',
+                         'Plutellidae',
+                         'Psocodea',
+                         'Psychodidae',
+                         'Pterophoridae',
+                         'Pyralidae',
+                         'Pyrausta',
+                         'Sepsidae',
+                         'Spilosoma',
+                         'Staphylinidae',
+                         'Stratiomyidae',
+                         'Syrphidae',
+                         'Tettigoniidae',
+                         'Tipulidae',
+                         'Tomoceridae',
+                         'Tortricidae',
+                         'Trichoptera',
+                         'Triodia sylvina',
+                         'Yponomeuta',
+                         'Yponomeutidae']}
+```
+
+### 6. Visualize the predictions
 Use the model to detect and classify insects in the image.
 
 ```python
-outputs = predictor(image)
-v = Visualizer(image[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale=1.2)
+v = Visualizer(im[:, :, ::-1], thing_classes)
 out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
 cv2_imshow(out.get_image()[:, :, ::-1])
 ```
+
+![detectron2_detections](../../static/img/detectron2_detections.jpg)
 
 ### 7. Save the Processed Image
 Save the processed image back to your Google Drive.
 
 ```python
-output_path = '/content/drive/MyDrive/processed_image.jpg'
-cv2.imwrite(output_path, out.get_image()[:, :, ::-1])
+save_path = '/content/drive/MyDrive/diopsis_coco_split_flowers/flower-night_detections.jpg'
+cv2.imwrite(save_path, out.get_image()[:, :, ::-1])
 ```
 
 ## Conclusion

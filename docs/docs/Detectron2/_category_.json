@@ -2,6 +2,7 @@
   "label": "Detectron2",
   "position": 5,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "The notebook utilizes Detectron2's Faster R-CNN model to detect and classify insects in images. Detectron2 is a powerful and flexible library for object detection and segmentation, developed by Facebook AI Research (FAIR). This notebook guides users through the setup process, including mounting Google Drive, installing Detectron2, loading images, configuring the model, and running inference to visualize detected and classified insects. The result is a seamless workflow for accurately identifying and categorizing insects in any given image."
   }
 }

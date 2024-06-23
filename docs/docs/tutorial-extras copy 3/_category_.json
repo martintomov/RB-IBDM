@@ -2,6 +2,7 @@
   "label": "GSL",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "GLS leverages Grounding DINO, Segment Anything Model (SAM), and LaMa to automatically detect and segment insects in images, then replace the background with a yellow screen. This process involves mounting Google Drive for file access, installing necessary libraries, loading the target image, detecting and segmenting insects, and finally applying the new background. This pipeline enables efficient and accurate background replacement tailored for images containing insects."
   }
 }

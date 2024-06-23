@@ -9,7 +9,7 @@ InsectSAM is a semantic segmentation model that can be used to segment insects i
 
 To use InsectSAM on your dataset, you can follow this script that demonstrates how to load the model, process images, and get the results in an output folder. The script uses the **Hugging Face Transformers** library and **PyTorch**:
 
-<a href="https://colab.research.google.com/github/martintmv-git/RB-IBDM/blob/main/InsectSAM/insectsam_script.ipynb" target="_parent">
+<a href="https://colab.research.google.com/github/martintmv-git/RB-IBDM/blob/main/Image%20Processing%20Scripts/InsectSAM/insectsam_script.ipynb" target="_parent">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

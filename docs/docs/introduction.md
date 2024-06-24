@@ -10,7 +10,7 @@ Welcome to the **RB-IBDM** documentation!
 ![Introduction](../static/img/demo-rbibdm.png)
 
 ## Project Pipeline
-![Introduction](../static/img/rb-ibdm-pipeline.png)
+![Introduction](../static/img/rb-ibdm-pipeline.webp)
 
 ## Getting Started
 

@@ -24,6 +24,9 @@ https://github.com/martintmv-git/RB-IBDM/assets/101264514/fcde1500-9fbb-40c1-898
 
 ## Project Pipeline
 
+![pipeline](https://github.com/martintmv-git/RB-IBDM/assets/101264514/7213c6b8-332f-419c-ba14-3fb67b4f817d)
+
+
 </div>
 
 ## ✍️ Authors

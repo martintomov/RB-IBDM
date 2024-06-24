@@ -10,6 +10,10 @@ This notebook is designed to detect insects in images, segment them, and replace
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
+### ⚠️ Disclaimer
+
+**This page covers the basic process workflow. The provided notebook gives the additional option of running GSL on either a single image or a folder of images and saves the results by default.**
+
 
 ## Prerequisites
 1. **Google Colab**: Ensure you are running this notebook in Google Colab for seamless execution of the code, especially for GPU support.

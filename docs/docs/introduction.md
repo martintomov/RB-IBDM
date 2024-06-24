@@ -9,6 +9,9 @@ Welcome to the **RB-IBDM** documentation!
 
 ![Introduction](../static/img/demo-rbibdm.png)
 
+## Project Pipeline
+![Introduction](../static/img/rb-ibdm-pipeline.png)
+
 ## Getting Started
 
 Let's get you started with **RB-IBDM** and guide you through the initial steps to utilize this model effectively.

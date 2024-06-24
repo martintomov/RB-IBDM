@@ -6,9 +6,13 @@ sidebar_position: 1
 ## Overview
 This notebook uses Detectron2's Faster R-CNN model with a ResNeXt-101-32x8d backbone and Feature Pyramid Network (FPN) to detect and classify insects in images. It guides you through setting up the environment, loading the model, processing images, and visualizing the results.
 
-<a href="https://colab.research.google.com/drive/1QZoKi-58ZdS5S6GkkmfUZKo0L8OoiIkJ" target="_blank">
+<a href="https://colab.research.google.com/drive/1QZoKi-58ZdS5S6GkkmfUZKo0L8OoiIkJ?usp=share_link" target="_blank">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
+### ⚠️ Disclaimer
+
+**This page covers the basic process workflow. The provided notebook gives the additional option of running inference on either a single image or a folder of images and saves the results, both annotated images and .CSV file, by default.**
 
 ## Prerequisites
 1. **Google Colab**: Ensure you are running this notebook in Google Colab for GPU support.

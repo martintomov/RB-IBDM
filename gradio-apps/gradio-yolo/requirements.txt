@@ -1,0 +1,9 @@
+gradio
+torch
+transformers
+opencv-python
+Pillow
+numpy
+requests
+matplotlib
+ultralytics

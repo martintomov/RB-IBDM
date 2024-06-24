@@ -1,0 +1,8 @@
+gradio==4.29.0
+torch
+transformers
+opencv-python
+Pillow
+numpy
+requests
+matplotlib

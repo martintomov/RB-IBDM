@@ -6,7 +6,7 @@ sidebar_position: 1
 ## Overview
 This notebook is designed to detect insects in images, segment them, and replace the background with a yellow screen. It leverages the Grounding DINO, Segment Anything Model (SAM), and LaMa for achieving these tasks. Follow the instructions below to use the notebook and process your own images.
 
-<a href="https://colab.research.google.com/drive/1KQSBMwXGhI2IGr3nImQnCLcX1xHzGBh0" target="_blank">
+<a href="https://colab.research.google.com/drive/1Jo2wTp4dDEPa-8GOz91bJoJBdkyLhH2J?usp=share_link" target="_blank">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

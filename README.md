@@ -1,6 +1,8 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/WAjTEo4.jpeg alt="Project logo"></a>
+    
+![rb-ibdm-banner](https://github.com/martintmv-git/RB-IBDM/assets/101264514/a22f2069-e3c8-4a4f-a314-59cb01b39b66)
+
 </p>
 
 <h3 align="center">Research-Based Insect Biodiversity Detection and Monitoring</h3>

@@ -4,7 +4,7 @@ sidebar_position: 1
 # Usage
 
 ## Overview
-This notebook uses Detectron2's Faster R-CNN model with a ResNeXt-101-32x8d backbone and Feature Pyramid Network (FPN) to detect and classify insects in images. It guides you through setting up the environment, loading the model, processing images, and visualizing the results.
+This notebook uses Detectron2's Faster R-CNN model with a ResNet-50 backbone and Feature Pyramid Network (FPN) to detect and classify insects in images. It guides you through setting up the environment, loading the model, processing images, and visualizing the results.
 
 <a href="https://colab.research.google.com/drive/1QZoKi-58ZdS5S6GkkmfUZKo0L8OoiIkJ?usp=share_link" target="_blank">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -67,8 +67,8 @@ Set up the configuration for the Detectron2 Faster R-CNN model.
 
 ```python
 cfg = get_cfg()
-cfg.merge_from_file('/content/drive/MyDrive/diopsis_coco_split_flowers/results/config.yml')
-cfg.MODEL.WEIGHTS = '/content/drive/MyDrive/diopsis_coco_split_flowers/results/model_0004999.pth'
+cfg.merge_from_file('/content/drive/MyDrive/Fontys_Sem7/insect_detection/Detectron2 - Faster-RCNN/results5/config.yml')
+cfg.MODEL.WEIGHTS = '/content/drive/MyDrive/Fontys_Sem7/insect_detection/Detectron2 - Faster-RCNN/results5/model_final.pth'
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.2
 predictor = DefaultPredictor(cfg)
 ```
@@ -77,7 +77,7 @@ predictor = DefaultPredictor(cfg)
 Load the image you want to process from your Google Drive and use the model to detect and classify insects in the image.
 
 ```python
-image_path = '/content/drive/MyDrive/diopsis_coco_split_flowers/flower-night.jpg'
+image_path = '/content/drive/MyDrive/Fontys_Sem7/insect_detection/Detectron2 - Faster-RCNN/flower-night.jpg'
 im = cv2.imread(image_path)
 outputs = predictor(im)
 ```
@@ -188,7 +188,7 @@ cv2_imshow(out.get_image()[:, :, ::-1])
 Save the processed image back to your Google Drive.
 
 ```python
-save_path = '/content/drive/MyDrive/diopsis_coco_split_flowers/flower-night_detections.jpg'
+save_path = '/content/drive/MyDrive/Fontys_Sem7/insect_detection/Detectron2 - Faster-RCNN/flower-night_detections.jpg'
 cv2.imwrite(save_path, out.get_image()[:, :, ::-1])
 ```
 
